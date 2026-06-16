@@ -1,0 +1,281 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20, 6, 34);
+}
+
+.nav_bar {
+    border-bottom: #8946ce solid 1.5px;
+}
+
+.nav_bar .Icon {
+    font-family: "Playwrite GB J", cursive;
+    position: absolute;
+    transform: translateY(-1.2em);
+    margin-left: 1.5em;
+    color: rgb(199, 199, 199);
+    padding: 0;
+}
+
+.nav_bar i {
+    position: absolute;
+    transform: translateY(0.12em);
+    color: #b82292;
+}
+
+.nav_bar nav {
+    text-align: end;
+    margin-right: 1em;
+}
+
+.nav_bar nav ul {
+    list-style: none;
+}
+
+.nav_bar nav ul li a {
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(199, 199, 199);
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+.nav_bar nav ul li a:hover {
+    border-bottom: #8946ce solid 1.5px;
+}
+
+.Container {
+    background-color: rgb(30, 9, 51);
+    width: 35%;
+    height: 49em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    border: #8946ce solid 1.5px;
+    border-radius: 24px;
+}
+
+.Container i {
+    display: flex;
+    justify-content: center;
+    color: rgb(199, 199, 199);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+}
+
+.Container .firstMainText {
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(199, 199, 199);
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.Container .secondMainText {
+    font-family: "Playwrite GB J", cursive;
+    font-weight: 100;
+    color: rgb(199, 199, 199);
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+.note {
+    background: linear-gradient(90deg, #b82292 0%, #a044cb 50%, #8946ce 100%);
+    height: 2.5em;
+    width: 93%;
+    margin-left: 1em;
+    border: rgb(86, 26, 117) solid 1px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.note .noteText {
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(199, 199, 199);
+    font-size: 0.8em;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.user_input {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.user_input label {
+    display: inline-block;
+    color: rgb(199, 199, 199);
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.row {
+    display: flex;
+    gap: 1em;
+}
+
+.user_input .email,
+.user_input .username,
+.user_input .password,
+.user_input .cnfrmpass {
+    color: rgb(199, 199, 199);
+    background-color: rgb(48, 48, 48);
+    height: 3em;
+    width: 100%;
+    border-radius: 15px;
+    border: rgb(33, 33, 33) solid 1.5px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.user_input .extra {
+    color: rgb(199, 199, 199);
+    background-color: rgb(48, 48, 48);
+    height: 12em;
+    width: 95%;
+    border-radius: 15px;
+    border: rgb(33, 33, 33) solid 1.5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    resize: none;
+}
+
+input, textarea:focus {
+    outline: none;
+}
+
+input:-webkit-autofill {
+    outline: none;
+    -webkit-text-fill-color: rgb(199, 199, 199);
+    -webkit-box-shadow: 0 0 0px 1000px rgb(48, 48, 48) inset;
+}
+
+.user_submit button {
+    font-family: "Ubuntu", sans-serif;
+    height: 3em;
+    width: 96%;
+    border: rgb(86, 26, 117) solid 1px;
+    border-radius: 10px;
+    color: rgb(199, 199, 199);
+    background: linear-gradient(90deg, #b82292 0%, #a044cb 50%, #8946ce 100%);
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.user_submit button:hover {
+    background: transparent;
+    border: rgb(86, 26, 117) solid 1.5px;
+}
+
+.user_submit button:active {
+    color: rgb(86, 26, 117);
+    background: rgb(86, 26, 117);
+    border: rgb(86, 26, 117) solid 1.5px;
+}
+
+.or {
+    color: rgb(199, 199, 199);
+    text-align: center;
+    margin-top: 1em;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.loginChoice {
+    color: rgb(199, 199, 199);
+    text-align: center;
+    margin-top: 1em;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.loginChoice span a {
+    color: #8946ce;
+    text-decoration: none;
+}
+
+.error {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(146, 0, 0);
+    font-size: 0.8em;
+    margin-left: 0.5em;
+}
+
+@media (max-width: 480px) {
+
+    .Container {
+        width: 80%;
+        height: 58em;
+    }
+
+    .note {
+        width: 90%;
+    }
+
+    .user_input .email,
+    .user_input .username,
+    .user_input .password,
+    .user_input .cnfrmpass {
+        width: 90%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .Container i {
+        display: flex;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .Container {
+        width: 75%;
+        height: 58em;
+    }
+
+    .user_input .email,
+    .user_input .username,
+    .user_input .password,
+    .user_input .cnfrmpass {
+        width: 95%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Container {
+        width: 40%;
+        height: 48em;
+    }
+
+    .user_input .email,
+    .user_input .username,
+    .user_input .password,
+    .user_input .cnfrmpass {
+        width: 90%;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+}

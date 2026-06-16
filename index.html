@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/classic/solid/diamond">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registery page</title>
+</head>
+<body>
+    <div class="nav_bar">
+        <i class="fa-solid fa-diamond"></i>
+        <p class="Icon">AniScraler</p>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                    <a href="">Login</a>
+                    <a href="">Register</a>
+                </li>
+            </ul>    
+        </nav>
+    </div>
+    <div class="Container">
+        <i class="fa-solid fa-user-plus"></i>
+        <div class="mainText">
+            <h1 class="firstMainText">
+                Create account
+            </h1>
+            <p class="secondMainText">
+                Join the AniScraler community
+            </p>
+        </div>
+        <div class="note">
+            <p class="noteText">Your info will be sent to our Discord server</p>
+        </div>
+        <form action="/" method="GET" class="user_input" id="user_input">
+            <div class="row">
+                <div class="Field">
+                    <label class="Email" for="email">Email</label><br>
+                    <input class="email" type="text" id="email" name="email" placeholder="eg. example@gmail.com">
+                </div>
+                <div class="Field">
+                    <label class="Username" for="username">Username</label><br>
+                    <input class="username" type="text" id="username" name="username" placeholder="eg. joshua123">
+                </div>
+            </div>
+            <div class="row">
+                <div class="Field">
+                    <label class="Password" for="password">Password</label><br>
+                    <input class="password" type="password" name="pass" id="pass" placeholder="eg. 1234567890">
+                </div>
+                <div class="Field">
+                    <label class="CnfrmPass" for="cnfrmpass">Confirm password</label><br>
+                    <input class="cnfrmpass" type="password" name="cnfrmpass" id="cnfrmpass" placeholder="Confirm your password">
+                </div>
+            </div>
+            <div class="Field">
+                <label>Your favourite animes</label>
+                <textarea class="extra" placeholder="eg. Demon slayer, Dragon ball, One punch man, one piece, and etc..."></textarea>
+            </div>
+            <div class="error" id="error"></div>
+            <div class="user_submit">
+            <button type="submit" id="submit">Create account</button>
+            </div>
+        </form>
+        <div class="or">— or —</div>
+        <div class="loginChoice">Already have an account? <span><a href="">Login</a></span></div>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>
