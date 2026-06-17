@@ -1,4 +1,3 @@
-const button = document.getElementById("submit");
 const password = document.getElementById("pass");
 const cnfrmpass = document.getElementById("cnfrmpass");
 const email = document.getElementById("email")
