@@ -223,15 +223,19 @@ input:-webkit-autofill {
         height: 58em;
     }
 
+    .Container i {
+        margin-left: 0.3em;
+    }
+
     .note {
-        width: 90%;
+        width: 91%;
     }
 
     .user_input .email,
     .user_input .username,
     .user_input .password,
     .user_input .cnfrmpass {
-        width: 90%;
+        width: 95%;
     }
 
     .row {
@@ -246,15 +250,23 @@ input:-webkit-autofill {
 @media (min-width: 481px) and (max-width: 768px) {
 
     .Container {
-        width: 75%;
+        width: 70%;
         height: 58em;
+    }
+
+    .Container i {
+        margin-left: 0.3em;
     }
 
     .user_input .email,
     .user_input .username,
     .user_input .password,
     .user_input .cnfrmpass {
-        width: 95%;
+        width: 97%;
+    }
+
+    .note {
+        width: 94%;
     }
 
     .row {
@@ -268,11 +280,19 @@ input:-webkit-autofill {
         height: 48em;
     }
 
+    .Container i {
+        margin-left: 0.3em;
+    }
+
     .user_input .email,
     .user_input .username,
     .user_input .password,
     .user_input .cnfrmpass {
         width: 90%;
+    }
+
+    .note {
+        width: 92%;
     }
 
     .row {
