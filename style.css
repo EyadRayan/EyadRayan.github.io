@@ -48,7 +48,7 @@ body {
 .Container {
     background-color: rgb(30, 9, 51);
     width: 35%;
-    height: 48em;
+    height: 50em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
@@ -87,12 +87,11 @@ body {
 .note {
     background: linear-gradient(90deg, #b82292 0%, #a044cb 50%, #8946ce 100%);
     height: 2.5em;
-    width: 93%;
-    margin-left: 1em;
+    width: 90%;
     border: rgb(86, 26, 117) solid 1px;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
+    margin-left: 0.8em;
+    margin-right: 0.8em; 
 }
 
 .note .noteText {
@@ -113,11 +112,16 @@ body {
 }
 
 .user_input label {
-    display: inline-block;
     color: rgb(199, 199, 199);
     font-family: "Ubuntu", sans-serif;
-    font-size: 0.9em;
+    font-size: 0.95em;
     margin-bottom: 0.3em;
+    margin-left: 0.3em;
+}
+
+.user_input .favourites span {
+    color: rgb(133, 133, 133);
+    font-size: 0.7em;
 }
 
 .field {
@@ -145,7 +149,7 @@ body {
     padding-right: 1em;
 }
 
-.user_input .extra {
+.user_input .fav {
     color: rgb(199, 199, 199);
     background-color: rgb(48, 48, 48);
     height: 12em;
@@ -158,7 +162,7 @@ body {
     resize: none;
 }
 
-input, textarea:focus {
+.user_input .fav:focus {
     outline: none;
 }
 
@@ -213,9 +217,7 @@ input:-webkit-autofill {
 .error {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(146, 0, 0);
-    font-size: 0.8em;
-    margin-left: 0.5em;
-    max-width: 31em;
+    font-size: 0.9em;
 }
 
 @media (max-width: 480px) {
@@ -279,7 +281,15 @@ input:-webkit-autofill {
 @media (min-width: 769px) and (max-width: 1024px) {
     .Container {
         width: 40%;
-        height: 48em;
+        height: 49em;
+    }
+
+    .note {
+        height: 3.5em;
+    }
+
+    .note .noteText {
+        padding: 0, 1em, 0, 1em
     }
 
     .Container i {
@@ -296,6 +306,65 @@ input:-webkit-autofill {
     .note {
         width: 92%;
     }
+
+    .row {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .Container {
+        width: 35%;
+        height: 47.5em;
+    }
+
+    .Container i {
+        margin-left: 0.3em;
+    }
+
+    .user_input .email,
+    .user_input .username,
+    .user_input .password,
+    .user_input .cnfrmpass {
+        width: 90%;
+    }
+
+    .note {
+        width: 92%;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .Container {
+        width: 30%;
+        height: 48em;
+    }
+
+    .Container i {
+        margin-left: 0.3em;
+    }
+
+    .user_input .email,
+    .user_input .username,
+    .user_input .password,
+    .user_input .cnfrmpass {
+        width: 92.5%;
+        gap: 5em;
+        
+    }
+
+    .user_input .fav {
+        width: 96.2%;
+    }
+
+    .note {
+        width: 93%;
+    }
+
 
     .row {
         flex-direction: row;

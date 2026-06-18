@@ -46,25 +46,29 @@
                 <div class="Field">
                     <label class="Email" for="email">Email</label><br>
                     <input class="email" type="text" id="email" name="email" placeholder="eg. example@gmail.com">
+                    <div class="error" id="error"></div>
                 </div>
                 <div class="Field">
                     <label class="Username" for="username">Username</label><br>
                     <input class="username" type="text" id="username" name="username" placeholder="eg. joshua123">
+                    <div class="error" id="error"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="Field">
                     <label class="Password" for="password">Password</label><br>
                     <input class="password" type="password" name="pass" id="pass" placeholder="eg. 1234567890">
+                    <div class="error" id="error"></div>
                 </div>
                 <div class="Field">
                     <label class="CnfrmPass" for="cnfrmpass">Confirm password</label><br>
                     <input class="cnfrmpass" type="password" name="cnfrmpass" id="cnfrmpass" placeholder="Confirm your password">
+                    <div class="error" id="error"></div>
                 </div>
             </div>
             <div class="Field">
-                <label>Your favourite animes</label>
-                <textarea class="extra" placeholder="eg. Demon slayer, Dragon ball, One punch man, one piece, and etc..."></textarea>
+                <label class="favourites">Your favourite animes <span>(Optional)</span></label>
+                <textarea class="fav" id="fav" name="fav" placeholder="eg. Demon slayer, Dragon ball, One punch man, one piece, and etc..."></textarea>
             </div>
             <div class="error" id="error"></div>
             <div class="user_submit">
