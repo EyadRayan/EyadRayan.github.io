@@ -88,12 +88,4 @@ const fetchData = () => {
         },
         body: JSON.stringify(content)
     })
-
-    fetch('users.json', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
 }
