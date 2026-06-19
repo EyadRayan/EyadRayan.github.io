@@ -6,10 +6,12 @@ const fav = document.getElementById("fav")
 const form = document.getElementById("user_input")
 
 form.addEventListener('submit', (e) => {
-    validateInputs();
-    fetchData();
-
     e.preventDefault();
+    
+    const isValid = validateInputs();
+    if (isValid) {
+        fetchData();
+    }
 })
 
 const setError = (element, message) => {
@@ -36,7 +38,14 @@ const isValidEmail = email => {
   return re.test(String(email).toLowerCase());
 }
 
+const isValidUser = username => {
+    const re = /^[a-zA-Z][a-zA-Z0-9_]{2,15}$/;
+    return re.test(String(username).toLowerCase());
+}
+
 const validateInputs = () => {
+    let isFormValid = true;
+
     const usernameValue = username.value.trim()
     const emailValue = email.value.trim()
     const passwordValue = password.value.trim()
@@ -44,33 +53,45 @@ const validateInputs = () => {
 
     if (usernameValue === '') {
         setError(username, 'Username is required.')
+        isFormValid = false;
+    } else if (!isValidUser(usernameValue)) {
+        setError(username, 'Invalid')
+        isFormValid = false;
     } else {
         setSuccess(username);
     }
 
     if (emailValue === '') {
         setError(email, 'Email is required.')
+        isFormValid = false;
     } else if (!isValidEmail(emailValue)) {
         setError(email, 'Please provide a valid email address.')
+        isFormValid = false;
     } else {
         setSuccess(email)
     }
 
+    if (passwordValue === '') {
+        setError(password, 'Password is required.')
+        isFormValid = false;
+    } else if (passwordValue.length < 8 || passwordValue.length > 20) {
+        setError(password, 'Password must be 8 to 20 character.')
+        isFormValid = false;
+    } else {
+        setSuccess(password)
+    }
+
     if (cnfrmpassValue === '') {
         setError(cnfrmpass, 'Confirm your password.')
+        isFormValid = false;
     } else if (passwordValue !== cnfrmpassValue) {
         setError(cnfrmpass, `Password doesn't match`)
+        isFormValid = false;
     } else {
         setSuccess(cnfrmpass)
     }
 
-    if (passwordValue === '') {
-        setError(password, 'Password is required.')
-    } else if (passwordValue.length < 6 || passwordValue.length > 20) {
-        setError(password, 'Password must be 6 to 20 character.')
-    } else {
-        setSuccess(password)
-    }
+    return isFormValid;
 }
 
 const fetchData = () => {
