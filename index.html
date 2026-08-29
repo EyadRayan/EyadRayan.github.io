@@ -1,83 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons/classic/solid/diamond">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registery page</title>
+    <title>Fi - Digital Marketplace</title>
+    <style>
+        :root {
+            --bg-purple: #8A64A9;
+            --accent-light: #E2BBE9;
+            --dark-card: #1E1B2E;
+            --text-dark: #2D1436;
+            --card-bg: #F1EDF6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-purple);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Layout */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 5%;
+            width: 100%;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            background-color: var(--dark-card);
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .search-box {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .search-box input {
+            background-color: #ECE6F0;
+            border: none;
+            padding: 0.6rem 2.2rem 0.6rem 1.1rem;
+            border-radius: 20px;
+            width: 180px;
+            outline: none;
+            color: #333;
+            font-size: 0.9rem;
+            transition: width 0.3s ease;
+        }
+
+        .search-box input:focus {
+            width: 220px;
+        }
+
+        .search-box::after {
+            content: "🔍";
+            position: absolute;
+            right: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Main Container */
+        main.hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem 5% 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 580px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-light);
+            color: var(--text-dark);
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #FFFFFF;
+            border: 1.5px solid #FFFFFF;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Illustration Box */
+        .hero-image-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hero-image {
+            background-color: var(--card-bg);
+            border-radius: 28px;
+            padding: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 0.9;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        .hero-image svg {
+            width: 100%;
+            height: 100%;
+            max-width: 320px;
+        }
+
+        /* --- Breakpoints --- */
+
+        /* Tablets & Mobile Screens (Under 868px) */
+        @media (max-width: 868px) {
+            header {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            main.hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+                padding-top: 1rem;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 400px;
+            }
+        }
+
+        /* Mobile Phones (Under 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            .search-box input {
+                width: 130px;
+            }
+
+            .search-box input:focus {
+                width: 150px;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .hero-image {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="nav_bar">
-        <i class="fa-solid fa-diamond"></i>
-        <p class="Icon">AniScraler</p>
+
+    <header>
+        <div class="logo">Fi</div>
         <nav>
             <ul>
-                <li>
-                    <a href="">Home</a>
-                    <a href="">Login</a>
-                    <a href="">Register</a>
-                </li>
-            </ul>    
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-    </div>
-    <div class="Container">
-        <i class="fa-solid fa-user-plus"></i>
-        <div class="mainText">
-            <h1 class="firstMainText">
-                Create account
-            </h1>
-            <p class="secondMainText">
-                Join the AniScraler community
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Buy, sell, trade all<br>in one place</h1>
+            <p>
+                buy, sell, and trade a wide range of digital goodies. From gift cards and website templates to exclusive digital assets and more, discover, connect, and level up your online game with ease. Whether you're a creator, collector, or just hunting for deals.
             </p>
+            <div class="buttons">
+                <button class="btn-primary">SHOP NOW</button>
+                <button class="btn-secondary">Learn more</button>
+            </div>
         </div>
-        <div class="note">
-            <p class="noteText"><span>NOTE: </span>Your info will be sent to our Discord server</p>
+        <div class="hero-image-wrapper">
+            <div class="hero-image">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="20" fill="#E2E8F0"/>
+                    <path d="M40 160L40 70C40 64.4772 44.4772 60 50 60H150C155.523 60 160 64.4772 160 70V160" stroke="#3B82F6" stroke-width="4"/>
+                    <rect x="55" y="80" width="90" height="70" rx="5" fill="#FFFFFF"/>
+                    <circle cx="100" cy="110" r="15" stroke="#3B82F6" stroke-width="3"/>
+                    <path d="M95 110L98 113L105 106" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M70 90H130" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
         </div>
-        <form class="user_input" id="user_input">
-            <div class="row">
-                <div class="Field">
-                    <label class="Email" for="email">Email</label><br>
-                    <input class="email" type="text" id="email" name="email" placeholder="eg. example@gmail.com">
-                    <div class="error" id="error"></div>
-                </div>
-                <div class="Field">
-                    <label class="Username" for="username">Username</label><br>
-                    <input class="username" type="text" id="username" name="username" placeholder="eg. joshua123">
-                    <div class="error" id="error"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="Field">
-                    <label class="Password" for="password">Password</label><br>
-                    <input class="password" type="password" name="pass" id="pass" placeholder="eg. 1234567890">
-                    <div class="error" id="error"></div>
-                </div>
-                <div class="Field">
-                    <label class="CnfrmPass" for="cnfrmpass">Confirm password</label><br>
-                    <input class="cnfrmpass" type="password" name="cnfrmpass" id="cnfrmpass" placeholder="Confirm your password">
-                    <div class="error" id="error"></div>
-                </div>
-            </div>
-            <div class="Field">
-                <label class="favourites">Your favourite animes <span>(Optional)</span></label>
-                <textarea class="fav" id="fav" name="fav" placeholder="eg. Demon slayer, Dragon ball, One punch man, one piece, and etc..."></textarea>
-            </div>
-            <div class="error" id="error"></div>
-            <div class="user_submit">
-            <button type="submit" id="submit">Create account</button>
-            </div>
-        </form>
-        <div class="or">— or —</div>
-        <div class="loginChoice">Already have an account? <span><a href="">Login</a></span></div>
-    </div>
-    <script defer src="script.js"></script>
+    </main>
+
 </body>
 </html>
